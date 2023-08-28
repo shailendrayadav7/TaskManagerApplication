@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { login } from '../services/api';
+import { Link } from 'react-router-dom';
 
 function Login() {
   const { register, handleSubmit } = useForm();
@@ -19,6 +20,7 @@ function Login() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+      <Link to="/">Home</Link>
       <h2 className="text-2xl font-bold mb-4">Login</h2>
       <form className="flex flex-col gap-2" onSubmit={handleSubmit(onSubmit)}>
         <input

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { register } from '../services/api';
+import { Link } from 'react-router-dom';
 
 function Register() {
   const { register, handleSubmit } = useForm();
@@ -20,8 +21,33 @@ function Register() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
+      <Link to="/">Home</Link>
       <h2 className="text-2xl font-bold mb-4">Register</h2>
       <form className="flex flex-col gap-2" onSubmit={handleSubmit(onSubmit)}>
+        <input
+          {...register('firstName')}
+          type="text"
+          placeholder="First Name"
+          className="border p-2 rounded"
+        />
+        <input
+          {...register('lastName')}
+          type="text"
+          placeholder="Last Name"
+          className="border p-2 rounded"
+        />
+        <input
+          {...register('email')}
+          type="email"
+          placeholder="Email"
+          className="border p-2 rounded"
+        />
+        <input
+          {...register('phone')}
+          type="tel"
+          placeholder="Phone"
+          className="border p-2 rounded"
+        />
         <input
           {...register('username')}
           type="text"
